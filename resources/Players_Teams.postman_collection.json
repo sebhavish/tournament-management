@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "d3e0f5f8-dcc0-4600-b1b4-e8cb91dee29d",
+		"name": "Players_Teams",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Teams Endpoints",
+			"item": [
+				{
+					"name": "Get Team By Id non existent team",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/team/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Team By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/team/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view all teams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/team/allTeams?pageNo=0&pageSize=5&sortBy=id&sortDir=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team",
+								"allTeams"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "sortDir",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new Team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"location\": \"Lucknow\",\r\n  \"name\": \"Lucknow Super Gaints\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/team/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update team",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Lucknow Mega Gaints\",\r\n    \"location\":\"Lucknow\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/team/update/215",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team",
+								"update",
+								"215"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a team by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/team/delete/215",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team",
+								"delete",
+								"215"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Players Endpoints",
+			"item": [
+				{
+					"name": "get player using id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/player/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve players based on team id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/player/5/allPlayers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"5",
+								"allPlayers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a player based on team id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"age\": 28,\r\n  \"name\": \"Mitchell Marsh\",\r\n  \"playerType\": \"all rounder\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/player/5/addPlayer",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"5",
+								"addPlayer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve all players",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/player/allPlayers?pageNo=0&pageSize=5&sortBy=id&sortDir=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"allPlayers"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "sortDir",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a player using id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/player/delete/216",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"delete",
+								"216"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve team using player id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/player/getTeam/125",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"getTeam",
+								"125"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update player using id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"age\": 28,\r\n  \"name\": \"Kagiso Rabada\",\r\n  \"playerType\": \"All Rounder\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/player/update/125",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"update",
+								"125"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
